@@ -1,0 +1,24 @@
+# Pastas de compilação (IntelliJ, Maven e NetBeans)
+out/
+target/
+build/
+dist/
+
+# Configurações locais de IDEs (IntelliJ, NetBeans, Eclipse, VS Code)
+.idea/
+*.iml
+nbproject/private/
+.classpath
+.project
+.settings/
+.vscode/
+
+# Arquivos gerados em tempo de execução (Testes locais)
+ListagemAlunos.txt
+*.db
+*.lck
+*.log
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
