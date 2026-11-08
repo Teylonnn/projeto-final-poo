@@ -42,6 +42,14 @@ public class Main {
             System.out.println(x);
         }
 
-        AlunoCSV.salvarCSV(alunos);
-    }
+        AlunoCSV.salvarCSV(alunos); //salvar no arquivo CSV
+        AlunoDB.SalvarDb(alunos); //salvar no BD
+
+        //receber e imprimir os alunos que estão no BD
+        System.out.println("------------------------");
+        List<Aluno> alunos2 = AlunoDB.ListarAlunos();
+
+        for (Aluno aluno : alunos) {
+            System.out.println(aluno);
+        }    }
 }

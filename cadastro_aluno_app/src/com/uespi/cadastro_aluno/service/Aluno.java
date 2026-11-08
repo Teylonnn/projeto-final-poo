@@ -1,18 +1,30 @@
 package com.uespi.cadastro_aluno.service;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
-public class Aluno {
-    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+@Entity
+@Table(name = "Aluno")
+public class Aluno<A> {
+    static final DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    @Id
+    private int matricula;
     private String nome;
-    private int idade, matricula;
+    private int idade;
     private LocalDate dataNascimento;
     private String telefone;
     private String CPF;
-    //Construtor
+
+    //Construtores
+    public Aluno(){
+
+    }
     public Aluno(String nome, String CPF, int matricula, LocalDate dataNascimento, String telefone) {
         this.nome = nome;
         this.CPF = CPF;
