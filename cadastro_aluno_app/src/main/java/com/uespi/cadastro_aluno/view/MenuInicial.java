@@ -65,8 +65,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Remover");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Cadastrar p/ posição");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -154,7 +156,42 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        TelaDeBusca telaDeBusca = new TelaDeBusca();
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeBusca, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO  add your handling code here:
+        
+        TelaDeRemocao telaDeRemocao = new TelaDeRemocao();
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeRemocao, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        TelaDeInsercaoPorPos telaDeInsercaoPorPos = new TelaDeInsercaoPorPos();
+        
+        PainelConteudo.removeAll();
+                
+        PainelConteudo.add(telaDeInsercaoPorPos, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+         
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
