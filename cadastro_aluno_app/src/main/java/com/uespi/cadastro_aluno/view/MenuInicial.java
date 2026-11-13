@@ -143,7 +143,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
-        CadastroAluno telaCadastro = new CadastroAluno();
+        CadastroAlunoPanel telaCadastro = new CadastroAlunoPanel();
         
         PainelConteudo.removeAll();
         

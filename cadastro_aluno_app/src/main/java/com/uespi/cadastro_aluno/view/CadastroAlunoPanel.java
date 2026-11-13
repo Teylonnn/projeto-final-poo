@@ -1,7 +1,10 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,12 +15,12 @@ import java.time.LocalDate;
  *
  * @author theyl
  */
-public class CadastroAluno extends javax.swing.JPanel {
+public class CadastroAlunoPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form CadastroAluno
      */
-    public CadastroAluno() {
+    public CadastroAlunoPanel() {
         initComponents();
     }
 
@@ -33,15 +36,15 @@ public class CadastroAluno extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        textMatricula = new javax.swing.JTextField();
+        textCpf = new javax.swing.JTextField();
         textNome = new javax.swing.JTextField();
-        textIdade = new javax.swing.JTextField();
-        textDataNasc = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        textDataNasc = new javax.swing.JTextField();
+        textTel = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -75,7 +78,7 @@ public class CadastroAluno extends javax.swing.JPanel {
                 .addComponent(jLabel1))
         );
 
-        textNome.addActionListener(this::textNomeActionPerformed);
+        textMatricula.addActionListener(this::textMatriculaActionPerformed);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Matrícula:");
@@ -90,9 +93,9 @@ public class CadastroAluno extends javax.swing.JPanel {
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        textDataNasc.addActionListener(this::textDataNascActionPerformed);
 
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+        textTel.addActionListener(this::textTelActionPerformed);
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Data de Nascimento:");
@@ -106,11 +109,11 @@ public class CadastroAluno extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textTel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(62, 62, 62)
@@ -142,56 +145,77 @@ public class CadastroAluno extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(4, 4, 4)
-                .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomeActionPerformed
+    private void textMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatriculaActionPerformed
          // TODO add your handling code here:
-    }//GEN-LAST:event_textNomeActionPerformed
+    }//GEN-LAST:event_textMatriculaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        /*String nomeDoAluno = textNome.getText().trim();
-        String idadeDoAluno = textIdade.getText().trim();
+        // Obtenção dos dados do aluno;
+        String matDoAluno = textMatricula.getText().trim();
+        String cpfDoAluno = textCpf.getText().trim();
+        String nomeDoAluno = textNome.getText().trim();
         String dataNascAluno = textDataNasc.getText().trim();
+        String telDoAluno = textTel.getText().trim();
         
-        if(nomeDoAluno.isEmpty() || idadeDoAluno.isEmpty() || dataNascAluno.isEmpty()){
-            javax.swing.JOptionPane.showMessageDialog(textNome, "Preencha todos os campos necessários !!!", "Aviso", 
+        // Verificação se os dados não estão vazios;
+        if(nomeDoAluno.isEmpty() || matDoAluno.isEmpty() || dataNascAluno.isEmpty() || telDoAluno.isEmpty() || cpfDoAluno.isEmpty()){
+            javax.swing.JOptionPane.showMessageDialog(textMatricula, "Preencha todos os campos necessários !!!", "Aviso", 
                     javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        Aluno aluno = new Aluno(nomeDoAluno, "11111111111", 1, LocalDate.parse(dataNascAluno), "665544656654"); 
-*/
+        // Criação de um objeto aluno para ser passado para classe cadastro aluno;
+        Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascAluno), telDoAluno); 
+        
+        CadastroAluno cadastroAluno = new CadastroAluno();
+        ArrayList<Aluno> l = new ArrayList<>();
+        cadastroAluno.addEstudante(l, aluno); // Aidção do aluno criado ao vetor de alunos pela classe cadastro aluno;
+        
+        javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso !!!", "Sucesso", 
+                javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;
+        
+        // Reinicialização dos campos ao concluir cadastro;
+        textMatricula.setText(" ");
+        textCpf.setText(" ");
+        textNome.setText(" ");
+        textDataNasc.setText(" ");
+        textTel.setText(" ");
+        
+        textMatricula.requestFocus();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textTelActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataNascActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textDataNascActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -204,10 +228,10 @@ public class CadastroAluno extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField textCpf;
     private javax.swing.JTextField textDataNasc;
-    private javax.swing.JTextField textIdade;
+    private javax.swing.JTextField textMatricula;
     private javax.swing.JTextField textNome;
+    private javax.swing.JTextField textTel;
     // End of variables declaration//GEN-END:variables
 }
