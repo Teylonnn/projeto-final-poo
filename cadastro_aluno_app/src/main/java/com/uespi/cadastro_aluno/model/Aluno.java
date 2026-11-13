@@ -1,4 +1,4 @@
-package com.uespi.cadastro_aluno.service;
+package com.uespi.cadastro_aluno.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

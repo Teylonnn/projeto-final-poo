@@ -1,6 +1,6 @@
 package com.uespi.cadastro_aluno.util;
 
-import com.uespi.cadastro_aluno.service.Aluno;
+import com.uespi.cadastro_aluno.model.Aluno;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

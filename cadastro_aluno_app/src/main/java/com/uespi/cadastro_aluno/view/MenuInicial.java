@@ -129,7 +129,7 @@ public class MenuInicial extends javax.swing.JFrame {
         
         
         PainelConteudo.revalidate();
-        PainelConteudo.repaint();
+        PainelConteudo.repaint(); 
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     /**

@@ -1,5 +1,6 @@
-package com.uespi.cadastro_aluno.service;
+package com.uespi.cadastro_aluno.model;
 
+import com.uespi.cadastro_aluno.model.Aluno;
 import java.util.List;
 
 public interface AlunoDAO {
