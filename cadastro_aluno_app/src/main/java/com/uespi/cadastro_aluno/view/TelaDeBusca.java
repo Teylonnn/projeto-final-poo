@@ -178,6 +178,7 @@ public class TelaDeBusca extends javax.swing.JPanel {
             aluno.getTelefone()
         });
         
+        textMat.setText(" ");
     }//GEN-LAST:event_botaoBuscarActionPerformed
 
 
