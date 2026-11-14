@@ -194,7 +194,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         
         // Verificação se os dados não estão vazios;
         if(nomeDoAluno.isEmpty() || matDoAluno.isEmpty() || dataNascAluno.isEmpty() || telDoAluno.isEmpty() || cpfDoAluno.isEmpty()){
-            javax.swing.JOptionPane.showMessageDialog(textMatricula, "Preencha todos os campos necessários !!!", "Aviso", 
+            javax.swing.JOptionPane.showMessageDialog(this, "Preencha todos os campos necessários !!!", "Aviso", 
                     javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
