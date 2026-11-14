@@ -17,7 +17,12 @@ public class TelaDeRemocao extends javax.swing.JPanel {
     /**
      * Creates new form TelaDeRemocao
      */
-    public TelaDeRemocao() {
+    // Criação de referências que irão receber objetos de menuInicial; 
+    List<Aluno> alunos;
+    CadastroAluno cadastroAluno = new CadastroAluno();
+    public TelaDeRemocao(List<Aluno> alunos, CadastroAluno cadastroAluno) {
+        this.alunos = alunos;
+        this.cadastroAluno = cadastroAluno;
         initComponents();
     }
 
@@ -100,6 +105,15 @@ public class TelaDeRemocao extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+    
+    
     private void textMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textMatActionPerformed
@@ -115,9 +129,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
             return;
         }
         
-        // Obtenção do vetor global de alunos;
         Aluno aluno = new Aluno();
-        List<Aluno> alunos = aluno.getAlunos();
         
         // Obtenção do aluno com base na matrícula;
         for(Aluno l: alunos){
@@ -127,8 +139,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
         }
         
         // Aplicação da remoção do aluno;
-        CadastroAluno cadastroAluno = new CadastroAluno();
-        aluno.setAlunos(cadastroAluno.removerAluno(aluno.getAlunos(), aluno));
+        this.setAlunos(cadastroAluno.removerAluno(this.getAlunos(), aluno));
         
         // Mensagem de conclusão de remoção e reinicialização dos campos;
         javax.swing.JOptionPane.showMessageDialog(this, "Remoção realizada !!!", "Sucesso", 

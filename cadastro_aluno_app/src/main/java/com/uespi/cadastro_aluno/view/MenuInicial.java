@@ -188,8 +188,8 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO  add your handling code here:
-        
-        TelaDeRemocao telaDeRemocao = new TelaDeRemocao();
+        // Passagem de variavéis base para interface de remoção;
+        TelaDeRemocao telaDeRemocao = new TelaDeRemocao(this.getAlunos(), cadastroAluno);
         
         PainelConteudo.removeAll();
         
