@@ -6,9 +6,9 @@ import java.util.List;
 public interface AlunoDAO {
     List getTodosEstudantes(List<Aluno> l);
 
-    void addEstudante(List<Aluno> l, Aluno a);
+    boolean addEstudante(List<Aluno> l, Aluno a);
 
-    void addEstudante(List<Aluno> l, Aluno a, int posicao);
+    boolean addEstudante(List<Aluno> l, Aluno a, int posicao);
 
     Aluno obterAluno(List<Aluno> l, int matricula);
 

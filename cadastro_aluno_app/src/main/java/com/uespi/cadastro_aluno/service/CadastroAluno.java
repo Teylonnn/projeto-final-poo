@@ -1,4 +1,4 @@
-package com.uespi.cadastro_aluno.service;
+package main.java.com.uespi.cadastro_aluno.service;
 
 import com.uespi.cadastro_aluno.model.AlunoDAO;
 import com.uespi.cadastro_aluno.model.Aluno;
@@ -20,24 +20,26 @@ public class CadastroAluno implements AlunoDAO{
 
     //Método adicionar o aluno
     @Override
-    public void addEstudante(List<Aluno> l, Aluno a) {
+    public boolean addEstudante(List<Aluno> l, Aluno a) {
         for (Aluno x : l){
             if(x.getMatricula() == a.getMatricula()){
-                throw new IllegalArgumentException("Matrícula já Cadastrada");
+                return false;
             }
         }
         l.add(a);
+        return true;
     }
 
     //Método adicionar o aluno com base na posição
     @Override
-    public void addEstudante(List<Aluno> l, Aluno a, int posicao) {
+    public boolean addEstudante(List<Aluno> l, Aluno a, int posicao) {
         for (Aluno x : l){
             if(x.getMatricula() == a.getMatricula()){
-                throw new IllegalArgumentException("Matrícula já Cadastrada");
+                return false;
             }
         }
         l.add(posicao,a);
+        return true;
     }
 
     //obter aluno com base na matricula
@@ -48,7 +50,7 @@ public class CadastroAluno implements AlunoDAO{
                 return x;
             }
         }
-        throw new NoSuchElementException("Aluno não encontrado");
+        return null;
     }
 
     //quantidade de elementos na lista
