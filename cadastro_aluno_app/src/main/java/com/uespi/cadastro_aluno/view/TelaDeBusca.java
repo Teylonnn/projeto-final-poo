@@ -6,6 +6,7 @@ package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,12 @@ public class TelaDeBusca extends javax.swing.JPanel {
     /**
      * Creates new form TelaDeBusca
      */
-    public TelaDeBusca() {
+    // Criação de referências que irão receber objetos do menuInicial;
+    private List<Aluno> alunos;
+    CadastroAluno cadastroAluno = new CadastroAluno(); 
+    public TelaDeBusca(List<Aluno> alunos, CadastroAluno cadastroAluno) {
+        this.alunos = alunos;
+        this.cadastroAluno = cadastroAluno;
         initComponents();
     }
 
@@ -132,6 +138,14 @@ public class TelaDeBusca extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+    
     private void textMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textMatActionPerformed
@@ -147,9 +161,8 @@ public class TelaDeBusca extends javax.swing.JPanel {
         }
         
         // Criação de objeto aluno para obter o retorno da busca e capturar o vetor que está na classe Aluno;
-        Aluno aluno = new Aluno();
-        CadastroAluno cadastroAluno = new CadastroAluno();
-        aluno = cadastroAluno.obterAluno(aluno.getAlunos(), Integer.parseInt(matDoAluno));
+        Aluno aluno;
+        aluno = cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno));
         
         // Configuração da tabela de resultado da busca;
         javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) resultados.getModel();
