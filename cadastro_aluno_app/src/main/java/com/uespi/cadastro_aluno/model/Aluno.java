@@ -7,14 +7,11 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "Aluno")
 public class Aluno<A> {
     static final DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    static List<Aluno> alunos = new ArrayList<Aluno>();
 
     @Id
     private int matricula;
@@ -97,12 +94,5 @@ public class Aluno<A> {
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
-    public List<Aluno> getAlunos(){
-        return alunos;
-    }
-    
-    public void setAlunos(List<Aluno> alunos){
-        this.alunos = alunos;
-    }
+   
 }

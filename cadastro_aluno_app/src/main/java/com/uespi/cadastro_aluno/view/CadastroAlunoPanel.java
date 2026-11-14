@@ -3,7 +3,6 @@ package com.uespi.cadastro_aluno.view;
 import com.uespi.cadastro_aluno.model.Aluno;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -20,7 +19,12 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
     /**
      * Creates new form CadastroAluno
      */
-    public CadastroAlunoPanel() {
+    // Referências que irão armazenar as variavéis que vem de menuInical;
+    private List<Aluno> alunos;
+    CadastroAluno cadastroAluno;
+    public CadastroAlunoPanel(List<Aluno> alunos, CadastroAluno cadastroAluno) {
+        this.alunos = alunos;
+        this.cadastroAluno = cadastroAluno;
         initComponents();
     }
 
@@ -167,6 +171,14 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+    
     private void textMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatriculaActionPerformed
          // TODO add your handling code here:
     }//GEN-LAST:event_textMatriculaActionPerformed
@@ -190,8 +202,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         // Criação de um objeto aluno para ser passado para classe cadastro aluno;
         Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascAluno), telDoAluno); 
         
-        CadastroAluno cadastroAluno = new CadastroAluno();
-        cadastroAluno.addEstudante(aluno.getAlunos(), aluno); // Adição do aluno criado ao vetor de alunos pela classe cadastro aluno;
+        cadastroAluno.addEstudante(this.getAlunos() , aluno); // Adição do aluno criado ao vetor de alunos pela classe cadastro aluno;
         
         javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso !!!", "Sucesso", 
                 javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;

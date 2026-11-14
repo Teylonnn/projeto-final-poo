@@ -1,4 +1,11 @@
-package com.uespi.cadastro_aluno.view;/*
+package com.uespi.cadastro_aluno.view;
+
+import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.service.CadastroAluno;
+import java.util.ArrayList;
+import java.util.List;
+
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -10,6 +17,9 @@ package com.uespi.cadastro_aluno.view;/*
 public class MenuInicial extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuInicial.class.getName());
+    // Criação de um vetor de alunos da aplicação e da classe utilitária;
+    private List<Aluno> alunos = new ArrayList<>();
+    CadastroAluno cadastroAluno = new CadastroAluno();
 
     /**
      * Creates new form MenuInicial
@@ -141,9 +151,18 @@ public class MenuInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+    
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
-        CadastroAlunoPanel telaCadastro = new CadastroAlunoPanel();
+        // Passagem de varáveis base para interface de cadastro;
+        CadastroAlunoPanel telaCadastro = new CadastroAlunoPanel(this.getAlunos(), cadastroAluno);
         
         PainelConteudo.removeAll();
         
