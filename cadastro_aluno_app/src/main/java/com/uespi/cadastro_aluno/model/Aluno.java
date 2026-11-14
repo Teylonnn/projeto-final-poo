@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "Aluno")
 public class Aluno<A> {
     static final DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    static final List<Aluno> alunos = new ArrayList<Aluno>();
+    static List<Aluno> alunos = new ArrayList<Aluno>();
 
     @Id
     private int matricula;
@@ -100,5 +100,9 @@ public class Aluno<A> {
     
     public List<Aluno> getAlunos(){
         return alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
     }
 }

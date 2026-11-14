@@ -4,6 +4,10 @@
  */
 package com.uespi.cadastro_aluno.view;
 
+import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.service.CadastroAluno;
+import java.util.List;
+
 /**
  *
  * @author theyl
@@ -30,7 +34,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        textMat = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText(" Remover");
@@ -57,8 +61,9 @@ public class TelaDeRemocao extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Remover");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        textMat.addActionListener(this::textMatActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -77,7 +82,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,16 +93,51 @@ public class TelaDeRemocao extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(54, 54, 54))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textMatActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String matDoAluno = textMat.getText().trim(); // Captação dos dados digitados pelo aluno;
+        
+        // Verificação sobre se os campos estão vazios;
+        if(matDoAluno.isEmpty()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Preencha os campos necessários !!!", "Aviso",
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        // Obtenção do vetor global de alunos;
+        Aluno aluno = new Aluno();
+        List<Aluno> alunos = aluno.getAlunos();
+        
+        // Obtenção do aluno com base na matrícula;
+        for(Aluno l: alunos){
+            if(l.getMatricula()==Integer.parseInt(matDoAluno)){
+                aluno = l;
+            }
+        }
+        
+        // Aplicação da remoção do aluno;
+        CadastroAluno cadastroAluno = new CadastroAluno();
+        aluno.setAlunos(cadastroAluno.removerAluno(aluno.getAlunos(), aluno));
+        
+        // Mensagem de conclusão de remoção e reinicialização dos campos;
+        javax.swing.JOptionPane.showMessageDialog(this, "Remoção realizada !!!", "Sucesso", 
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+       textMat.setText(" ");
+       textMat.requestFocus();
+           
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -105,6 +145,6 @@ public class TelaDeRemocao extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField textMat;
     // End of variables declaration//GEN-END:variables
 }
