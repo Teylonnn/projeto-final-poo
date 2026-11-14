@@ -1,5 +1,6 @@
-package com.uespi.cadastro_aluno.service;
+package com.uespi.cadastro_aluno.repository;
 
+import com.uespi.cadastro_aluno.model.Aluno;
 import com.uespi.cadastro_aluno.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

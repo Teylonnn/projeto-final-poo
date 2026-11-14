@@ -1,5 +1,7 @@
 package com.uespi.cadastro_aluno.service;
 
+import com.uespi.cadastro_aluno.model.AlunoDAO;
+import com.uespi.cadastro_aluno.model.Aluno;
 import java.util.List;
 import java.util.NoSuchElementException;
 

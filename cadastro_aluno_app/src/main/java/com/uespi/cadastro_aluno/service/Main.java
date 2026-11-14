@@ -1,5 +1,9 @@
 package com.uespi.cadastro_aluno.service;
 
+import com.uespi.cadastro_aluno.repository.AlunoDB;
+import com.uespi.cadastro_aluno.repository.AlunoCSV;
+import com.uespi.cadastro_aluno.model.AlunoDAO;
+import com.uespi.cadastro_aluno.model.Aluno;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
