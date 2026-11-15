@@ -35,45 +35,55 @@ public class TelaDeBusca extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        textMat = new javax.swing.JTextField();
+        PainelBusca = new javax.swing.JPanel();
+        RotuloTituloBusca = new javax.swing.JLabel();
+        CampoMat = new javax.swing.JTextField();
         botaoBuscar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        RotuloMat = new javax.swing.JLabel();
         resultadoBusca = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         resultados = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel1.setText(" Busca");
+        PainelBusca.setBackground(new java.awt.Color(107, 114, 128));
+        PainelBusca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        PainelBusca.setForeground(new java.awt.Color(247, 250, 252));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        RotuloTituloBusca.setBackground(new java.awt.Color(107, 114, 128));
+        RotuloTituloBusca.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        RotuloTituloBusca.setForeground(new java.awt.Color(247, 250, 252));
+        RotuloTituloBusca.setText(" Busca");
+
+        javax.swing.GroupLayout PainelBuscaLayout = new javax.swing.GroupLayout(PainelBusca);
+        PainelBusca.setLayout(PainelBuscaLayout);
+        PainelBuscaLayout.setHorizontalGroup(
+            PainelBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelBuscaLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(jLabel1)
+                .addComponent(RotuloTituloBusca)
                 .addContainerGap(61, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        PainelBuscaLayout.setVerticalGroup(
+            PainelBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelBuscaLayout.createSequentialGroup()
                 .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel1))
+                .addComponent(RotuloTituloBusca))
         );
 
-        textMat.setText(" ");
-        textMat.addActionListener(this::textMatActionPerformed);
+        CampoMat.setText(" ");
+        CampoMat.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        CampoMat.addActionListener(this::CampoMatActionPerformed);
 
         botaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         botaoBuscar.setText("Buscar");
         botaoBuscar.addActionListener(this::botaoBuscarActionPerformed);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Matrícula:");
+        RotuloMat.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        RotuloMat.setText("Matrícula:");
 
+        resultadoBusca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         resultadoBusca.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         resultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,30 +119,30 @@ public class TelaDeBusca extends javax.swing.JPanel {
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CampoMat, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botaoBuscar))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                            .addComponent(RotuloMat)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(290, 290, 290)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(PainelBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jLabel2)
+                .addComponent(RotuloMat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(resultadoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -146,13 +156,13 @@ public class TelaDeBusca extends javax.swing.JPanel {
         this.alunos = alunos;
     }
     
-    private void textMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textMatActionPerformed
+    private void CampoMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoMatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textMatActionPerformed
+    }//GEN-LAST:event_CampoMatActionPerformed
 
     private void botaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarActionPerformed
         // TODO add your handling code here:
-        String matDoAluno = textMat.getText().trim(); // Captação dos dados digitados pelo aluno;
+        String matDoAluno = CampoMat.getText().trim(); // Captação dos dados digitados pelo aluno;
         
         if(matDoAluno.isEmpty()){ // Verificação se os campos foram preenchidos;
             javax.swing.JOptionPane.showMessageDialog(this, "Erro !!! Preencha os campos.", "Aviso", 
@@ -178,19 +188,18 @@ public class TelaDeBusca extends javax.swing.JPanel {
             aluno.getTelefone()
         });
         
-        textMat.setText(" ");
+        CampoMat.setText(" ");
     }//GEN-LAST:event_botaoBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CampoMat;
+    private javax.swing.JPanel PainelBusca;
+    private javax.swing.JLabel RotuloMat;
+    private javax.swing.JLabel RotuloTituloBusca;
     private javax.swing.JButton botaoBuscar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel resultadoBusca;
     private javax.swing.JTable resultados;
-    private javax.swing.JTextField textMat;
     // End of variables declaration//GEN-END:variables
 }
