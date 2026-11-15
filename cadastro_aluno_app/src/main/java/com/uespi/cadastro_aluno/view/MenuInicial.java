@@ -251,6 +251,15 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void BotaoEstatisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEstatisticaActionPerformed
         // TODO add your handling code here:
+        
+        TelaDeEstatistica telaDeEst = new TelaDeEstatistica(this.getAlunos(), this.cadastroAluno);
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeEst, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
     }//GEN-LAST:event_BotaoEstatisticaActionPerformed
 
     /**
