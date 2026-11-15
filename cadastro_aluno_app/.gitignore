@@ -4,6 +4,7 @@ target/
 build/
 dist/
 ListagemAlunos.txt
+banco/
 
 # Configurações locais de IDEs (IntelliJ, NetBeans, Eclipse, VS Code)
 .idea/
