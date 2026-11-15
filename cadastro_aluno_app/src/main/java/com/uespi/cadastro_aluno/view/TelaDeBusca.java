@@ -73,7 +73,9 @@ public class TelaDeBusca extends javax.swing.JPanel {
         CampoMat.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         CampoMat.addActionListener(this::CampoMatActionPerformed);
 
+        botaoBuscar.setBackground(new java.awt.Color(107, 114, 128));
         botaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botaoBuscar.setForeground(new java.awt.Color(247, 250, 252));
         botaoBuscar.setText("Buscar");
         botaoBuscar.addActionListener(this::botaoBuscarActionPerformed);
 

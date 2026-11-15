@@ -13,14 +13,14 @@ import java.util.List;
  *
  * @author theyl
  */
-public class TelaDeInsercaoPorPos extends javax.swing.JPanel {
+public class TelaDeCadastroPorPos extends javax.swing.JPanel {
 
     /**
      * Creates new form TelaDeInsercaoPorPos
      */
     List<Aluno> alunos;
     CadastroAluno cadastroAluno;
-    public TelaDeInsercaoPorPos(List<Aluno> alunos, CadastroAluno cadastroAluno) {
+    public TelaDeCadastroPorPos(List<Aluno> alunos, CadastroAluno cadastroAluno) {
         this.alunos = alunos;
         this.cadastroAluno = cadastroAluno;
         initComponents();
@@ -116,7 +116,9 @@ public class TelaDeInsercaoPorPos extends javax.swing.JPanel {
         RotuloDataNasc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         RotuloDataNasc.setText("Data de nascimento:");
 
+        BotaoCadastrarPos.setBackground(new java.awt.Color(107, 114, 128));
         BotaoCadastrarPos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrarPos.setForeground(new java.awt.Color(247, 250, 252));
         BotaoCadastrarPos.setText("Cadastrar");
         BotaoCadastrarPos.addActionListener(this::BotaoCadastrarPosActionPerformed);
 
@@ -139,25 +141,26 @@ public class TelaDeInsercaoPorPos extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(RotuloMat)
-                        .addComponent(RotuloCpf)
-                        .addComponent(RotuloNome)
-                        .addComponent(RotuloDataNasc)
-                        .addComponent(RotuloTel)
-                        .addComponent(RotuloPos)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RotuloMat)
+                            .addComponent(RotuloCpf)
+                            .addComponent(RotuloNome)
+                            .addComponent(RotuloDataNasc)
+                            .addComponent(RotuloTel)
+                            .addComponent(RotuloPos)
                             .addComponent(textPos, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(15, 15, 15))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(textMat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                            .addComponent(textCpf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textNome, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textTel, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(textCpf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                                    .addComponent(textNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textTel, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGap(15, 15, 15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(105, 105, 105))
@@ -173,7 +176,7 @@ public class TelaDeInsercaoPorPos extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(RotuloMat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textMat, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(RotuloCpf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

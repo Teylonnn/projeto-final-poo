@@ -37,39 +37,39 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        PainelTitulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         textMatricula = new javax.swing.JTextField();
         textCpf = new javax.swing.JTextField();
         textNome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        CampoMat = new javax.swing.JLabel();
+        CampoCpf = new javax.swing.JLabel();
+        CampoNome = new javax.swing.JLabel();
+        BotaoCadastrar = new javax.swing.JButton();
         textDataNasc = new javax.swing.JTextField();
         textTel = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        CampoDataNasc = new javax.swing.JLabel();
+        CampoTel = new javax.swing.JLabel();
 
-        jPanel2.setBackground(new java.awt.Color(107, 114, 128));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(17, 24, 39), 2, true));
+        PainelTitulo.setBackground(new java.awt.Color(107, 114, 128));
+        PainelTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(17, 24, 39), 2, true));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 250, 252));
         jLabel1.setText(" Cadastro");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+        javax.swing.GroupLayout PainelTituloLayout = new javax.swing.GroupLayout(PainelTitulo);
+        PainelTitulo.setLayout(PainelTituloLayout);
+        PainelTituloLayout.setHorizontalGroup(
+            PainelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelTituloLayout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30))
+                .addGap(29, 29, 29))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        PainelTituloLayout.setVerticalGroup(
+            PainelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelTituloLayout.createSequentialGroup()
                 .addGap(0, 6, Short.MAX_VALUE)
                 .addComponent(jLabel1))
         );
@@ -81,18 +81,20 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
 
         textNome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Matrícula:");
+        CampoMat.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CampoMat.setText("Matrícula:");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setText("CPF:");
+        CampoCpf.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CampoCpf.setText("CPF:");
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setText("Nome:");
+        CampoNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CampoNome.setText("Nome:");
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        BotaoCadastrar.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoCadastrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrar.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoCadastrar.setText("Cadastrar");
+        BotaoCadastrar.addActionListener(this::BotaoCadastrarActionPerformed);
 
         textDataNasc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         textDataNasc.addActionListener(this::textDataNascActionPerformed);
@@ -100,11 +102,11 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         textTel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         textTel.addActionListener(this::textTelActionPerformed);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setText("Data de Nascimento:");
+        CampoDataNasc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CampoDataNasc.setText("Data de Nascimento:");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel6.setText("Telefone:");
+        CampoTel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        CampoTel.setText("Telefone:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,54 +115,54 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(textMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textTel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)))
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoDataNasc)
+                            .addComponent(CampoMat)
+                            .addComponent(textMatricula, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                            .addComponent(textTel)
+                            .addComponent(textDataNasc)
+                            .addComponent(textNome)
+                            .addComponent(textCpf)
+                            .addComponent(CampoCpf)
+                            .addComponent(CampoNome)
+                            .addComponent(CampoTel)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(137, 137, 137)
+                        .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jButton1)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(177, 177, 177)
+                        .addComponent(BotaoCadastrar)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(CampoMat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CampoCpf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CampoNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(CampoDataNasc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(CampoTel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(21, 21, 21))
+                .addGap(80, 80, 80)
+                .addComponent(BotaoCadastrar)
+                .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -176,7 +178,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
          // TODO add your handling code here:
     }//GEN-LAST:event_textMatriculaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
         // Obtenção dos dados do aluno;
         String matDoAluno = textMatricula.getText().trim();
@@ -209,7 +211,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         
         textMatricula.requestFocus();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void textTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTelActionPerformed
         // TODO add your handling code here:
@@ -221,14 +223,14 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BotaoCadastrar;
+    private javax.swing.JLabel CampoCpf;
+    private javax.swing.JLabel CampoDataNasc;
+    private javax.swing.JLabel CampoMat;
+    private javax.swing.JLabel CampoNome;
+    private javax.swing.JLabel CampoTel;
+    private javax.swing.JPanel PainelTitulo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField textCpf;
     private javax.swing.JTextField textDataNasc;
     private javax.swing.JTextField textMatricula;

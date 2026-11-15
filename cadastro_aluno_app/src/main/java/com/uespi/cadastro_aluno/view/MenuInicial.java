@@ -67,7 +67,7 @@ public class MenuInicial extends javax.swing.JFrame {
             .addGroup(PainelTituloLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(RotuloTitulo)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PainelTituloLayout.setVerticalGroup(
             PainelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,19 +80,27 @@ public class MenuInicial extends javax.swing.JFrame {
         PainelBotoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         PainelBotoes.setForeground(new java.awt.Color(255, 255, 255));
 
+        BotaoCadastrar.setBackground(new java.awt.Color(107, 114, 128));
         BotaoCadastrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrar.setForeground(new java.awt.Color(247, 250, 252));
         BotaoCadastrar.setText("Cadastrar");
         BotaoCadastrar.addActionListener(this::BotaoCadastrarActionPerformed);
 
+        BotaoBuscar.setBackground(new java.awt.Color(107, 114, 128));
         BotaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoBuscar.setForeground(new java.awt.Color(247, 250, 252));
         BotaoBuscar.setText("Buscar");
         BotaoBuscar.addActionListener(this::BotaoBuscarActionPerformed);
 
+        BotaoRemover.setBackground(new java.awt.Color(107, 114, 128));
         BotaoRemover.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoRemover.setForeground(new java.awt.Color(247, 250, 252));
         BotaoRemover.setText("Remover");
         BotaoRemover.addActionListener(this::BotaoRemoverActionPerformed);
 
+        BotaoCadastrarPos.setBackground(new java.awt.Color(107, 114, 128));
         BotaoCadastrarPos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrarPos.setForeground(new java.awt.Color(247, 250, 252));
         BotaoCadastrarPos.setText("Cadastrar p/ posição");
         BotaoCadastrarPos.addActionListener(this::BotaoCadastrarPosActionPerformed);
 
@@ -141,7 +149,7 @@ public class MenuInicial extends javax.swing.JFrame {
                     .addGroup(PainelPrincipalLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1047, Short.MAX_VALUE))
+                .addContainerGap(1043, Short.MAX_VALUE))
         );
         PainelPrincipalLayout.setVerticalGroup(
             PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +160,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -220,7 +228,7 @@ public class MenuInicial extends javax.swing.JFrame {
     private void BotaoCadastrarPosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarPosActionPerformed
         // TODO add your handling code here:
         
-        TelaDeInsercaoPorPos telaDeInsercaoPorPos = new TelaDeInsercaoPorPos(this.getAlunos(), cadastroAluno);
+        TelaDeCadastroPorPos telaDeInsercaoPorPos = new TelaDeCadastroPorPos(this.getAlunos(), cadastroAluno);
         
         PainelConteudo.removeAll();
                 
