@@ -168,7 +168,7 @@ public class TelaDeBusca extends javax.swing.JPanel {
         
         if(matDoAluno.isEmpty()){ // Verificação se os campos foram preenchidos;
             javax.swing.JOptionPane.showMessageDialog(this, "Erro !!! Preencha os campos.", "Aviso", 
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
         
