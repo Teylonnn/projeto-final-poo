@@ -1,4 +1,11 @@
-package com.uespi.cadastro_aluno.view;/*
+package com.uespi.cadastro_aluno.view;
+
+import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.service.CadastroAluno;
+import java.util.ArrayList;
+import java.util.List;
+
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -10,6 +17,9 @@ package com.uespi.cadastro_aluno.view;/*
 public class MenuInicial extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuInicial.class.getName());
+    // Criação de um vetor de alunos da aplicação e da classe utilitária;
+    private List<Aluno> alunos = new ArrayList<>();
+    CadastroAluno cadastroAluno = new CadastroAluno();
 
     /**
      * Creates new form MenuInicial
@@ -27,101 +37,168 @@ public class MenuInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        PainelPrincipal = new javax.swing.JPanel();
+        PainelTitulo = new javax.swing.JPanel();
+        RotuloTitulo = new javax.swing.JLabel();
+        PainelBotoes = new javax.swing.JPanel();
         BotaoCadastrar = new javax.swing.JButton();
+        BotaoBuscar = new javax.swing.JButton();
+        BotaoRemover = new javax.swing.JButton();
+        BotaoCadastrarPos = new javax.swing.JButton();
+        BotaoEstatistica = new javax.swing.JButton();
         PainelConteudo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(2147483647, 600));
+        setPreferredSize(new java.awt.Dimension(1027, 600));
 
-        jLabel1.setText("Sistema de cadastro de usuários");
+        PainelPrincipal.setBackground(new java.awt.Color(107, 114, 128));
+        PainelPrincipal.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addContainerGap(25, Short.MAX_VALUE))
+        PainelTitulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        PainelTitulo.setForeground(new java.awt.Color(255, 255, 255));
+
+        RotuloTitulo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        RotuloTitulo.setText("Sistema de gestão de alunos");
+
+        javax.swing.GroupLayout PainelTituloLayout = new javax.swing.GroupLayout(PainelTitulo);
+        PainelTitulo.setLayout(PainelTituloLayout);
+        PainelTituloLayout.setHorizontalGroup(
+            PainelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RotuloTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+        PainelTituloLayout.setVerticalGroup(
+            PainelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelTituloLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RotuloTitulo)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
+        PainelBotoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        PainelBotoes.setForeground(new java.awt.Color(255, 255, 255));
+
+        BotaoCadastrar.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoCadastrar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrar.setForeground(new java.awt.Color(247, 250, 252));
         BotaoCadastrar.setText("Cadastrar");
         BotaoCadastrar.addActionListener(this::BotaoCadastrarActionPerformed);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BotaoCadastrar)
-                .addContainerGap(49, Short.MAX_VALUE))
+        BotaoBuscar.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoBuscar.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoBuscar.setText("Buscar");
+        BotaoBuscar.addActionListener(this::BotaoBuscarActionPerformed);
+
+        BotaoRemover.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoRemover.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoRemover.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoRemover.setText("Remover");
+        BotaoRemover.addActionListener(this::BotaoRemoverActionPerformed);
+
+        BotaoCadastrarPos.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoCadastrarPos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoCadastrarPos.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoCadastrarPos.setText("Cadastrar p/ posição");
+        BotaoCadastrarPos.addActionListener(this::BotaoCadastrarPosActionPerformed);
+
+        BotaoEstatistica.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoEstatistica.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoEstatistica.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoEstatistica.setText("Estatística");
+        BotaoEstatistica.addActionListener(this::BotaoEstatisticaActionPerformed);
+
+        javax.swing.GroupLayout PainelBotoesLayout = new javax.swing.GroupLayout(PainelBotoes);
+        PainelBotoes.setLayout(PainelBotoesLayout);
+        PainelBotoesLayout.setHorizontalGroup(
+            PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelBotoesLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoCadastrarPos, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BotaoBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoCadastrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(BotaoCadastrar)
-                .addContainerGap(122, Short.MAX_VALUE))
+        PainelBotoesLayout.setVerticalGroup(
+            PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelBotoesLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoCadastrarPos, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
+        PainelConteudo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         PainelConteudo.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PainelPrincipalLayout = new javax.swing.GroupLayout(PainelPrincipal);
+        PainelPrincipal.setLayout(PainelPrincipalLayout);
+        PainelPrincipalLayout.setHorizontalGroup(
+            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135)
+                        .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(316, Short.MAX_VALUE))
+                        .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1043, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PainelPrincipalLayout.setVerticalGroup(
+            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelPrincipalLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+    
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
-        CadastroAluno telaCadastro = new CadastroAluno();
+        // Passagem de varáveis base para interface de cadastro;
+        CadastroAlunoPanel telaCadastro = new CadastroAlunoPanel(this.getAlunos(), cadastroAluno);
         
         PainelConteudo.removeAll();
         
@@ -131,6 +208,59 @@ public class MenuInicial extends javax.swing.JFrame {
         PainelConteudo.revalidate();
         PainelConteudo.repaint(); 
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
+
+    private void BotaoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoBuscarActionPerformed
+        // TODO add your handling code here:
+        // Passagem de variavéis base para interface de busca;
+        TelaDeBusca telaDeBusca = new TelaDeBusca(this.getAlunos(), this.cadastroAluno);
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeBusca, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+    }//GEN-LAST:event_BotaoBuscarActionPerformed
+
+    private void BotaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRemoverActionPerformed
+        // TODO  add your handling code here:
+        // Passagem de variavéis base para interface de remoção;
+        TelaDeRemocao telaDeRemocao = new TelaDeRemocao(this.getAlunos(), cadastroAluno);
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeRemocao, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+    }//GEN-LAST:event_BotaoRemoverActionPerformed
+
+    private void BotaoCadastrarPosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarPosActionPerformed
+        // TODO add your handling code here:
+        
+        TelaDeCadastroPorPos telaDeInsercaoPorPos = new TelaDeCadastroPorPos(this.getAlunos(), cadastroAluno);
+        
+        PainelConteudo.removeAll();
+                
+        PainelConteudo.add(telaDeInsercaoPorPos, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+         
+    }//GEN-LAST:event_BotaoCadastrarPosActionPerformed
+
+    private void BotaoEstatisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEstatisticaActionPerformed
+        // TODO add your handling code here:
+        
+        TelaDeEstatistica telaDeEst = new TelaDeEstatistica(this.getAlunos(), this.cadastroAluno);
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeEst, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+    }//GEN-LAST:event_BotaoEstatisticaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,11 +288,15 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoBuscar;
     private javax.swing.JButton BotaoCadastrar;
+    private javax.swing.JButton BotaoCadastrarPos;
+    private javax.swing.JButton BotaoEstatistica;
+    private javax.swing.JButton BotaoRemover;
+    private javax.swing.JPanel PainelBotoes;
     private javax.swing.JPanel PainelConteudo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel PainelPrincipal;
+    private javax.swing.JPanel PainelTitulo;
+    private javax.swing.JLabel RotuloTitulo;
     // End of variables declaration//GEN-END:variables
 }

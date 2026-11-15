@@ -94,4 +94,5 @@ public class Aluno<A> {
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+   
 }
