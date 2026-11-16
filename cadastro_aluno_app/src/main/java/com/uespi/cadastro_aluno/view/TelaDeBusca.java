@@ -176,6 +176,14 @@ public class TelaDeBusca extends javax.swing.JPanel {
         Aluno aluno;
         aluno = cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno));
         
+        // Verificação se o retorno de obterAluno foi nulo, logo, nada encontrado.
+        if(aluno == null){
+            javax.swing.JOptionPane.showMessageDialog(this, "Usuário não encontrado.", "Aviso", 
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+            CampoMat.setText(" ");
+            return;
+        }
+        
         // Configuração da tabela de resultado da busca;
         javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) resultados.getModel();
         
