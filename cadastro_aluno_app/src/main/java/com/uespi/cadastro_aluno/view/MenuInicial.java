@@ -44,15 +44,14 @@ public class MenuInicial extends javax.swing.JFrame {
         RotuloTitulo = new javax.swing.JLabel();
         PainelBotoes = new javax.swing.JPanel();
         BotaoCadastrar = new javax.swing.JButton();
-        BotaoBuscar = new javax.swing.JButton();
         BotaoRemover = new javax.swing.JButton();
         BotaoCadastrarPos = new javax.swing.JButton();
         BotaoEstatistica = new javax.swing.JButton();
+        BotaoBuscar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         PainelConteudo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(2147483647, 600));
-        setPreferredSize(new java.awt.Dimension(1027, 600));
 
         PainelPrincipal.setBackground(new java.awt.Color(107, 114, 128));
         PainelPrincipal.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,12 +88,6 @@ public class MenuInicial extends javax.swing.JFrame {
         BotaoCadastrar.setText("Cadastrar");
         BotaoCadastrar.addActionListener(this::BotaoCadastrarActionPerformed);
 
-        BotaoBuscar.setBackground(new java.awt.Color(107, 114, 128));
-        BotaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BotaoBuscar.setForeground(new java.awt.Color(247, 250, 252));
-        BotaoBuscar.setText("Buscar");
-        BotaoBuscar.addActionListener(this::BotaoBuscarActionPerformed);
-
         BotaoRemover.setBackground(new java.awt.Color(107, 114, 128));
         BotaoRemover.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BotaoRemover.setForeground(new java.awt.Color(247, 250, 252));
@@ -113,35 +106,49 @@ public class MenuInicial extends javax.swing.JFrame {
         BotaoEstatistica.setText("Estatística");
         BotaoEstatistica.addActionListener(this::BotaoEstatisticaActionPerformed);
 
+        BotaoBuscar.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoBuscar.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoBuscar.setText("Buscar");
+        BotaoBuscar.addActionListener(this::BotaoBuscarActionPerformed);
+
+        jButton1.setBackground(new java.awt.Color(107, 114, 128));
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(247, 250, 252));
+        jButton1.setText(" Listagem");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
         javax.swing.GroupLayout PainelBotoesLayout = new javax.swing.GroupLayout(PainelBotoes);
         PainelBotoes.setLayout(PainelBotoesLayout);
         PainelBotoesLayout.setHorizontalGroup(
             PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelBotoesLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
                 .addGroup(PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCadastrarPos, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(BotaoBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotaoCadastrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         PainelBotoesLayout.setVerticalGroup(
             PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelBotoesLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(24, 24, 24)
                 .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoCadastrarPos, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
+                .addComponent(BotaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         PainelConteudo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -154,7 +161,7 @@ public class MenuInicial extends javax.swing.JFrame {
             .addGroup(PainelPrincipalLayout.createSequentialGroup()
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PainelPrincipalLayout.createSequentialGroup()
-                        .addGap(77, 77, 77)
+                        .addGap(75, 75, 75)
                         .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(135, 135, 135)
                         .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -170,9 +177,12 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(PainelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                        .addComponent(PainelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(101, Short.MAX_VALUE))
+                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                        .addComponent(PainelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,6 +274,10 @@ public class MenuInicial extends javax.swing.JFrame {
         PainelConteudo.repaint();
     }//GEN-LAST:event_BotaoEstatisticaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,5 +314,6 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JPanel PainelPrincipal;
     private javax.swing.JPanel PainelTitulo;
     private javax.swing.JLabel RotuloTitulo;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
