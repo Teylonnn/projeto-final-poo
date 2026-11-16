@@ -229,7 +229,7 @@ public class TelaDeCadastroPorPos extends javax.swing.JPanel {
         String telDoAluno = textTel.getText().trim();
         String posDeInsercao = textPos.getText().trim();
         
-         if(nomeDoAluno.isEmpty() || matDoAluno.isEmpty() || dataNascDoAluno.isEmpty() || telDoAluno.isEmpty() || cpfDoAluno.isEmpty() || posDeInsercao.isEmpty()){
+        if(nomeDoAluno.isEmpty() || matDoAluno.isEmpty() || dataNascDoAluno.isEmpty() || telDoAluno.isEmpty() || cpfDoAluno.isEmpty() || posDeInsercao.isEmpty()){
             javax.swing.JOptionPane.showMessageDialog(this, "Preencha todos os campos necessários !!!", "Aviso", 
                     javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
@@ -240,12 +240,28 @@ public class TelaDeCadastroPorPos extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, "Posição inválida !!! Coloque valores entre 0 e " +  String.valueOf(this.getAlunos().size() - 1) + ".", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
+        
+        // Verificação para travar matrículas já cadastradas;
+        if(cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno)) != null){
+            javax.swing.JOptionPane.showMessageDialog(this, "Aluno já cadastrado !!!", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+            
+            // Reinicialização dos campos ao ter matrícula já cadastrada;
+            textMat.setText(" ");
+            textCpf.setText(" ");
+            textNome.setText(" ");
+            textDataNasc.setText(" ");
+            textTel.setText(" ");
+            textPos.setText(" ");
+        
+            textMat.requestFocus();
+            return;
+        }
          
         Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascDoAluno), telDoAluno);
         
         this.cadastroAluno.addEstudante(this.getAlunos(), aluno, Integer.parseInt(posDeInsercao));
         
-        javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso !!!", "Sucesso", 
+        javax.swing.JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso !!!", "Sucesso", 
                 javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;
         
         // Reinicialização dos campos ao concluir cadastro;

@@ -149,12 +149,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
             
             return;
         }
-        /*// Obtenção do aluno com base na matrícula;
-        for(Aluno l: alunos){
-            if(l.getMatricula()==Integer.parseInt(matDoAluno)){
-                aluno = l;
-            }
-        }*/
+        
         // Aplicação da remoção do aluno;
         this.setAlunos(cadastroAluno.removerAluno(this.getAlunos(), aluno));
         
