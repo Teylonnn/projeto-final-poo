@@ -194,6 +194,21 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
             return;
         }
         
+        // Verificação para travar matrículas já cadastradas;
+        if(cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno)) != null){
+            javax.swing.JOptionPane.showMessageDialog(this, "Usuário já cadastrado !!!", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+            
+            // Reinicialização dos campos ao ter matrícula já cadastrada;
+            textMatricula.setText(" ");
+            textCpf.setText(" ");
+            textNome.setText(" ");
+            textDataNasc.setText(" ");
+            textTel.setText(" ");
+        
+            textMatricula.requestFocus();
+            return;
+        }
+        
         // Criação de um objeto aluno para ser passado para classe cadastro aluno;
         Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascAluno), telDoAluno); 
         
