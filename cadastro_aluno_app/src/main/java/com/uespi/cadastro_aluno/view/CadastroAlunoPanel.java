@@ -196,7 +196,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         
         // Verificação para travar matrículas já cadastradas;
         if(cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno)) != null){
-            javax.swing.JOptionPane.showMessageDialog(this, "Usuário já cadastrado !!!", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Aluno já cadastrado !!!", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
             
             // Reinicialização dos campos ao ter matrícula já cadastrada;
             textMatricula.setText(" ");
@@ -214,7 +214,7 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         
         cadastroAluno.addEstudante(this.getAlunos() , aluno); // Adição do aluno criado ao vetor de alunos pela classe cadastro aluno;
         
-        javax.swing.JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso !!!", "Sucesso", 
+        javax.swing.JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso !!!", "Sucesso", 
                 javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;
         
         // Reinicialização dos campos ao concluir cadastro;

@@ -178,7 +178,7 @@ public class TelaDeBusca extends javax.swing.JPanel {
         
         // Verificação se o retorno de obterAluno foi nulo, logo, nada encontrado.
         if(aluno == null){
-            javax.swing.JOptionPane.showMessageDialog(this, "Usuário não encontrado.", "Aviso", 
+            javax.swing.JOptionPane.showMessageDialog(this, "Aluno não encontrado.", "Aviso", 
                     javax.swing.JOptionPane.WARNING_MESSAGE);
             CampoMat.setText(" ");
             return;
