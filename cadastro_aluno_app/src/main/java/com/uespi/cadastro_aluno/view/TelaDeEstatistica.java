@@ -89,11 +89,11 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
         alunoMaisVelhoResult = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         alunoMaisNovoResult = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        PainelRotuloAlunoMaisVleho = new javax.swing.JPanel();
         rotuloAlunoMaisVelho = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        PainelRotuloAlunoMaisNovo = new javax.swing.JPanel();
         rotuloAlunoMaisNovo = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        PainelRotuloTotalAlunos = new javax.swing.JPanel();
         totAlunos = new javax.swing.JLabel();
         valorDado = new javax.swing.JLabel();
 
@@ -166,55 +166,55 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(alunoMaisNovoResult);
 
-        jPanel2.setBackground(new java.awt.Color(107, 114, 128));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        PainelRotuloAlunoMaisVleho.setBackground(new java.awt.Color(107, 114, 128));
+        PainelRotuloAlunoMaisVleho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         rotuloAlunoMaisVelho.setBackground(new java.awt.Color(107, 114, 128));
         rotuloAlunoMaisVelho.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         rotuloAlunoMaisVelho.setForeground(new java.awt.Color(247, 250, 252));
         rotuloAlunoMaisVelho.setText("Aluno mais velho:");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout PainelRotuloAlunoMaisVlehoLayout = new javax.swing.GroupLayout(PainelRotuloAlunoMaisVleho);
+        PainelRotuloAlunoMaisVleho.setLayout(PainelRotuloAlunoMaisVlehoLayout);
+        PainelRotuloAlunoMaisVlehoLayout.setHorizontalGroup(
+            PainelRotuloAlunoMaisVlehoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelRotuloAlunoMaisVlehoLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(rotuloAlunoMaisVelho, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        PainelRotuloAlunoMaisVlehoLayout.setVerticalGroup(
+            PainelRotuloAlunoMaisVlehoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelRotuloAlunoMaisVlehoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(rotuloAlunoMaisVelho))
         );
 
-        jPanel3.setBackground(new java.awt.Color(107, 114, 128));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PainelRotuloAlunoMaisNovo.setBackground(new java.awt.Color(107, 114, 128));
+        PainelRotuloAlunoMaisNovo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         rotuloAlunoMaisNovo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         rotuloAlunoMaisNovo.setForeground(new java.awt.Color(247, 250, 252));
         rotuloAlunoMaisNovo.setText(" Aluno mais novo:");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout PainelRotuloAlunoMaisNovoLayout = new javax.swing.GroupLayout(PainelRotuloAlunoMaisNovo);
+        PainelRotuloAlunoMaisNovo.setLayout(PainelRotuloAlunoMaisNovoLayout);
+        PainelRotuloAlunoMaisNovoLayout.setHorizontalGroup(
+            PainelRotuloAlunoMaisNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelRotuloAlunoMaisNovoLayout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(rotuloAlunoMaisNovo)
                 .addGap(22, 22, 22))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        PainelRotuloAlunoMaisNovoLayout.setVerticalGroup(
+            PainelRotuloAlunoMaisNovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelRotuloAlunoMaisNovoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(rotuloAlunoMaisNovo))
         );
 
-        jPanel4.setBackground(new java.awt.Color(107, 114, 128));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PainelRotuloTotalAlunos.setBackground(new java.awt.Color(107, 114, 128));
+        PainelRotuloTotalAlunos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         totAlunos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         totAlunos.setForeground(new java.awt.Color(247, 250, 252));
@@ -222,22 +222,22 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
 
         valorDado.setForeground(new java.awt.Color(247, 250, 252));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout PainelRotuloTotalAlunosLayout = new javax.swing.GroupLayout(PainelRotuloTotalAlunos);
+        PainelRotuloTotalAlunos.setLayout(PainelRotuloTotalAlunosLayout);
+        PainelRotuloTotalAlunosLayout.setHorizontalGroup(
+            PainelRotuloTotalAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelRotuloTotalAlunosLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(totAlunos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(valorDado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        PainelRotuloTotalAlunosLayout.setVerticalGroup(
+            PainelRotuloTotalAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelRotuloTotalAlunosLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PainelRotuloTotalAlunosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(valorDado, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(totAlunos)))
         );
@@ -260,9 +260,9 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(PainelRotuloAlunoMaisVleho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PainelRotuloAlunoMaisNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PainelRotuloTotalAlunos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -271,13 +271,13 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(painelTit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelRotuloTotalAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelRotuloAlunoMaisVleho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PainelRotuloAlunoMaisNovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -293,11 +293,11 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PainelRotuloAlunoMaisNovo;
+    private javax.swing.JPanel PainelRotuloAlunoMaisVleho;
+    private javax.swing.JPanel PainelRotuloTotalAlunos;
     private javax.swing.JTable alunoMaisNovoResult;
     private javax.swing.JTable alunoMaisVelhoResult;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel painelTit;
