@@ -48,7 +48,7 @@ public class MenuInicial extends javax.swing.JFrame {
         BotaoCadastrarPos = new javax.swing.JButton();
         BotaoEstatistica = new javax.swing.JButton();
         BotaoBuscar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BotaoListagem = new javax.swing.JButton();
         PainelConteudo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,11 +112,11 @@ public class MenuInicial extends javax.swing.JFrame {
         BotaoBuscar.setText("Buscar");
         BotaoBuscar.addActionListener(this::BotaoBuscarActionPerformed);
 
-        jButton1.setBackground(new java.awt.Color(107, 114, 128));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(247, 250, 252));
-        jButton1.setText(" Listagem");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        BotaoListagem.setBackground(new java.awt.Color(107, 114, 128));
+        BotaoListagem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BotaoListagem.setForeground(new java.awt.Color(247, 250, 252));
+        BotaoListagem.setText(" Listagem");
+        BotaoListagem.addActionListener(this::BotaoListagemActionPerformed);
 
         javax.swing.GroupLayout PainelBotoesLayout = new javax.swing.GroupLayout(PainelBotoes);
         PainelBotoes.setLayout(PainelBotoesLayout);
@@ -125,7 +125,7 @@ public class MenuInicial extends javax.swing.JFrame {
             .addGroup(PainelBotoesLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(PainelBotoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoListagem, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,7 +145,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoListagem, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoEstatistica, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -274,9 +274,18 @@ public class MenuInicial extends javax.swing.JFrame {
         PainelConteudo.repaint();
     }//GEN-LAST:event_BotaoEstatisticaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotaoListagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListagemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        TelaDeListagem telaDeListagem = new TelaDeListagem(this.getAlunos());
+        
+        PainelConteudo.removeAll();
+        
+        PainelConteudo.add(telaDeListagem, java.awt.BorderLayout.CENTER);
+        
+        PainelConteudo.revalidate();
+        PainelConteudo.repaint();
+    }//GEN-LAST:event_BotaoListagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,12 +317,12 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton BotaoCadastrar;
     private javax.swing.JButton BotaoCadastrarPos;
     private javax.swing.JButton BotaoEstatistica;
+    private javax.swing.JButton BotaoListagem;
     private javax.swing.JButton BotaoRemover;
     private javax.swing.JPanel PainelBotoes;
     private javax.swing.JPanel PainelConteudo;
     private javax.swing.JPanel PainelPrincipal;
     private javax.swing.JPanel PainelTitulo;
     private javax.swing.JLabel RotuloTitulo;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
