@@ -6,6 +6,7 @@ package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class TelaDeBusca extends javax.swing.JPanel {
     // Criação de referências que irão receber objetos do menuInicial;
     private List<Aluno> alunos;
     CadastroAluno cadastroAluno = new CadastroAluno(); 
+    DateTimeFormatter formatoDaData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public TelaDeBusca(List<Aluno> alunos, CadastroAluno cadastroAluno) {
         this.alunos = alunos;
         this.cadastroAluno = cadastroAluno;
@@ -194,7 +196,7 @@ public class TelaDeBusca extends javax.swing.JPanel {
             aluno.getCPF(), 
             aluno.getNome(), 
             aluno.getIdade(), 
-            aluno.getDataNascimento(), 
+            aluno.getDataNascimento().format(this.formatoDaData), 
             aluno.getTelefone()
         });
         

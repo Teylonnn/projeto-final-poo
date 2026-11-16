@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -28,6 +29,7 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
     CadastroAluno cadastroAluno;
     Aluno alunoMaisNovo;
     Aluno alunoMaisVelho;
+    DateTimeFormatter formatoDaData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public TelaDeEstatistica(List<Aluno> alunos, CadastroAluno cadastroAluno) {
         initComponents();
         this.alunos = alunos;
@@ -50,7 +52,7 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
                 alunoMaisNovo.getCPF(),
                 alunoMaisNovo.getNome(),
                 alunoMaisNovo.getIdade(),
-                alunoMaisNovo.getDataNascimento(),
+                alunoMaisNovo.getDataNascimento().format(this.formatoDaData),
                 alunoMaisNovo.getTelefone()   
             });
         
@@ -62,17 +64,12 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
                 alunoMaisVelho.getCPF(),
                 alunoMaisVelho.getNome(),
                 alunoMaisVelho.getIdade(),
-                alunoMaisVelho.getDataNascimento(),
+                alunoMaisVelho.getDataNascimento().format(this.formatoDaData),
                 alunoMaisVelho.getTelefone()   
             });
             
             
-        }
-        
-        
-        
-        
-        
+        } 
         
     }
  
