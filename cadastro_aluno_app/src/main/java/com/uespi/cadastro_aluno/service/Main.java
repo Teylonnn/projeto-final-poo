@@ -1,4 +1,4 @@
-package main.java.com.uespi.cadastro_aluno.service;
+package com.uespi.cadastro_aluno.service;
 
 import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.repository.AlunoCSV;
