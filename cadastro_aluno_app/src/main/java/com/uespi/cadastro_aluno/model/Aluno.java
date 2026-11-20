@@ -9,8 +9,8 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name = "Aluno")
-public class Aluno<A> {
+@Table
+public class Aluno{
     static final DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Id
@@ -30,7 +30,6 @@ public class Aluno<A> {
         this.CPF = CPF;
         this.matricula = matricula;
         this.dataNascimento = dataNascimento;
-        this.idade = Period.between(dataNascimento, LocalDate.now()).getYears();
         this.telefone = telefone;
     }
 
@@ -39,11 +38,12 @@ public class Aluno<A> {
     public String toString() {
         return "Aluno{" +
                 "nome='" + nome + '\'' +
-                ", idade=" + idade +
+                ", idade=" + getIdade() +
                 ", telefone=" + telefone +
                 ", CPF=" + CPF +
                 ", matricula=" + matricula +
-                ", dataNascimento= " + dataNascimento.format(formato);
+                ", dataNascimento=" + (dataNascimento == null ? "null" : dataNascimento.format(formato)) +
+                '}';
     }
 
     //Getters e setters
@@ -56,11 +56,8 @@ public class Aluno<A> {
     }
 
     public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
+        return dataNascimento == null ? 0
+                : Period.between(dataNascimento, LocalDate.now()).getYears();
     }
 
     public String getTelefone() {
