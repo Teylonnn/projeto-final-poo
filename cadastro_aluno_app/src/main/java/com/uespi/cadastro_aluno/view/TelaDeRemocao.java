@@ -161,7 +161,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
        textMat.requestFocus();
            
     }//GEN-LAST:event_BotaoRemoverActionPerformed
-
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoRemover;

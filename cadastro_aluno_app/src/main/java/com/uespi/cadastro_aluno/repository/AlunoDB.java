@@ -8,32 +8,77 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class AlunoDB {
+
+    // Salva (insere ou atualiza) uma lista de alunos
     public static void SalvarDb(List<Aluno> alunos) {
         Transaction t = null;
-        try (Session sessao = HibernateUtil.getSessionFactory().openSession()) { //abre uma sessão com o banco
-            t = sessao.beginTransaction(); //começa transação
-            try {
-                for (Aluno x : alunos) { //prepara cada aluno dentro da lista para o commit
-                    sessao.persist(x);
-                }
-                t.commit(); //confirma o envio
-
-            } catch (Exception e) {
-                if (t.isActive()) {
-                    t.rollback();
-                }
-                e.printStackTrace();
+        try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
+            t = sessao.beginTransaction();
+            for (Aluno x : alunos) {
+                sessao.merge(x);
             }
+            t.commit();
+        } catch (RuntimeException e) {
+            if (t != null && t.isActive()) t.rollback();
+            throw e;
         }
     }
 
-    //método que usei para testar se tava sendo salvo corretamente no BD, vou deixar para a função funcionar na Main
-    public static List<Aluno> ListarAlunos() {
-
+    // Atualiza um aluno já existente (identificado pela matrícula).
+    // Retorna false se não existir no banco.
+    public static boolean AtualizarDb(Aluno aluno) {
+        Transaction t = null;
         try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
+            t = sessao.beginTransaction();
 
-            return sessao.createQuery("FROM Aluno", Aluno.class)
-                    .getResultList();
+            if (sessao.find(Aluno.class, aluno.getMatricula()) == null) {
+                t.rollback();
+                return false;
+            }
+
+            sessao.merge(aluno);
+            t.commit();
+            return true;
+        } catch (RuntimeException e) {
+            if (t != null && t.isActive()) t.rollback();
+            throw e;
+        }
+    }
+
+    // Remove um aluno pela matrícula.
+    // Retorna false se não existir no banco.
+    public static boolean RemoverDb(int matricula) {
+        Transaction t = null;
+        try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
+            t = sessao.beginTransaction();
+
+            Aluno aluno = sessao.find(Aluno.class, matricula);
+            if (aluno == null) {
+                t.rollback();
+                return false;
+            }
+
+            sessao.remove(aluno);
+            t.commit();
+            return true;
+        } catch (RuntimeException e) {
+            if (t != null && t.isActive()) t.rollback();
+            throw e;
+        }
+    }
+
+    // Busca um aluno pela matrícula (null se não existir)
+    public static Aluno BuscarPorMatricula(int matricula) {
+        try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
+            return sessao.find(Aluno.class, matricula);
+        }
+    }
+
+    // Função para receber a lista de alunos que estão no bd
+    public static List<Aluno> ListarAlunos() {
+        try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
+            return sessao.createQuery("FROM Aluno", Aluno.class).getResultList();
+
 
         }
     }
