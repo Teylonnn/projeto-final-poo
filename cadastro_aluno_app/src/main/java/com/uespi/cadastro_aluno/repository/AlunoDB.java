@@ -78,6 +78,7 @@ public class AlunoDB {
     public static List<Aluno> ListarAlunos() {
         try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
             return sessao.createQuery("FROM Aluno", Aluno.class).getResultList();
+
         }
     }
 }
