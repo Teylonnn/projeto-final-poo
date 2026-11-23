@@ -5,6 +5,8 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.time.format.DateTimeFormatter;
@@ -25,8 +27,10 @@ public class TelaDeListagem extends javax.swing.JPanel {
     JLabel statusDeAlunosCad;
     public TelaDeListagem(List<Aluno> alunos) {
         initComponents();
-        this.alunos = alunos; 
-        
+        //this.alunos = alunos;
+        // retorna a lista de alunos no db
+        alunos = AlunoDB.ListarAlunos();
+
         this.TotalAlunos.setText(String.valueOf(alunos.size()));
         
         // Criação do rotúlo e configuração;
@@ -35,7 +39,7 @@ public class TelaDeListagem extends javax.swing.JPanel {
         statusDeAlunosCad.setFont(new Font("Arial", Font.PLAIN, 14));
         
         // Verificação sobre a existência de dados em alunos e exibição dos dados;
-        if(this.getAlunos().isEmpty()){
+        if(alunos.isEmpty()){
             statusDeAlunosCad.setText("Sem alunos cadastrados ainda.");
             PainelRodape.add(statusDeAlunosCad);
         }

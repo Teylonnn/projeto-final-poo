@@ -5,6 +5,7 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.time.LocalDate;
 import java.util.List;
@@ -21,7 +22,8 @@ public class TelaDeCadastroPorPos extends javax.swing.JPanel {
     List<Aluno> alunos;
     CadastroAluno cadastroAluno;
     public TelaDeCadastroPorPos(List<Aluno> alunos, CadastroAluno cadastroAluno) {
-        this.alunos = alunos;
+        //this.alunos = alunos;
+        setAlunos(AlunoDB.ListarAlunos());
         this.cadastroAluno = cadastroAluno;
         initComponents();
     }
@@ -260,7 +262,8 @@ public class TelaDeCadastroPorPos extends javax.swing.JPanel {
         Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascDoAluno), telDoAluno);
         
         this.cadastroAluno.addEstudante(this.getAlunos(), aluno, Integer.parseInt(posDeInsercao));
-        
+        AlunoDB.SalvarDb(this.getAlunos());
+
         javax.swing.JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso !!!", "Sucesso", 
                 javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;
         

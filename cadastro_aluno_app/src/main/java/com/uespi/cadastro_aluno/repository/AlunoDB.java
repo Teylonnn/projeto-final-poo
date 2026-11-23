@@ -79,7 +79,6 @@ public class AlunoDB {
         try (Session sessao = HibernateUtil.getSessionFactory().openSession()) {
             return sessao.createQuery("FROM Aluno", Aluno.class).getResultList();
 
-
         }
     }
 }

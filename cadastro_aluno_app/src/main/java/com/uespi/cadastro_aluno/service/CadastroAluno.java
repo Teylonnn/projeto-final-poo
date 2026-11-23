@@ -38,7 +38,7 @@ public class CadastroAluno implements AlunoDAO{
                 return false;
             }
         }
-        l.add(posicao,a);
+        l.add(posicao, a);
         return true;
     }
 
@@ -59,31 +59,35 @@ public class CadastroAluno implements AlunoDAO{
         return l.size();
     }
 
-    //retorna a matricula do aluno mais velho
+    // retorna a matrícula do aluno mais velho (ou -1 se a lista estiver vazia)
     @Override
     public int alunoMaisVelho(List<Aluno> l) {
-        int id = 0;
-        int idade = 0;
-        for(Aluno x : l){
-            if(x.getIdade() > idade  ){
-                idade = x.getIdade();
-                id = x.getMatricula();
+        if (l == null || l.isEmpty()) {
+            return -1;
+        }
+
+        Aluno maisVelho = l.get(0);
+        for (Aluno x : l) {
+            if (x.getIdade() > maisVelho.getIdade()) {
+                maisVelho = x;
             }
         }
-        return id;
+        return maisVelho.getMatricula();
     }
 
-    //retorna a matricula do aluno mais novo
+    // retorna a matrícula do aluno mais novo (ou -1 se a lista estiver vazia)
     @Override
     public int alunoMaisNovo(List<Aluno> l) {
-        int id = 0;
-        int idade = 300;
-        for(Aluno x : l){
-            if(x.getIdade() < idade  ){
-                idade = x.getIdade();
-                id = x.getMatricula();
+        if (l == null || l.isEmpty()) {
+            return -1;
+        }
+
+        Aluno maisNovo = l.get(0);
+        for (Aluno x : l) {
+            if (x.getIdade() < maisNovo.getIdade()) {
+                maisNovo = x;
             }
         }
-        return id;
+        return maisNovo.getMatricula();
     }
 }

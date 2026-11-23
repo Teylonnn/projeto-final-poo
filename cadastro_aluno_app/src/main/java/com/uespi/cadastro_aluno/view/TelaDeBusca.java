@@ -5,6 +5,7 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -23,7 +24,8 @@ public class TelaDeBusca extends javax.swing.JPanel {
     CadastroAluno cadastroAluno = new CadastroAluno(); 
     DateTimeFormatter formatoDaData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public TelaDeBusca(List<Aluno> alunos, CadastroAluno cadastroAluno) {
-        this.alunos = alunos;
+        //this.alunos = alunos;
+        setAlunos(AlunoDB.ListarAlunos());
         this.cadastroAluno = cadastroAluno;
         initComponents();
     }
@@ -173,11 +175,12 @@ public class TelaDeBusca extends javax.swing.JPanel {
                     javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         // Criação de objeto aluno para obter o retorno da busca e capturar o vetor que está na classe Aluno;
         Aluno aluno;
         aluno = cadastroAluno.obterAluno(this.getAlunos(), Integer.parseInt(matDoAluno));
-        
+        //aluno = AlunoDB.BuscarPorMatricula(Integer.parseInt(matDoAluno));
+
         // Verificação se o retorno de obterAluno foi nulo, logo, nada encontrado.
         if(aluno == null){
             javax.swing.JOptionPane.showMessageDialog(this, "Aluno não encontrado.", "Aviso", 
