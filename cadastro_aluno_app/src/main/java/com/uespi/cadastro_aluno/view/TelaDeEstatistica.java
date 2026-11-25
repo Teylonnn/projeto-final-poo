@@ -5,6 +5,7 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -32,8 +33,11 @@ public class TelaDeEstatistica extends javax.swing.JPanel {
     DateTimeFormatter formatoDaData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     public TelaDeEstatistica(List<Aluno> alunos, CadastroAluno cadastroAluno) {
         initComponents();
-        this.alunos = alunos;
-        this.cadastroAluno = cadastroAluno; 
+        //this.alunos = alunos;
+        // retorna a lista de alunos no db
+        alunos = AlunoDB.ListarAlunos();
+        //setAlunos(AlunoDB.ListarAlunos());
+        this.cadastroAluno = cadastroAluno;
         
         valorDado.setText(String.valueOf(alunos.size())); 
         

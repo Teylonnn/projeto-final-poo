@@ -5,6 +5,7 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 
 import java.util.List;
@@ -139,8 +140,21 @@ public class TelaDeRemocao extends javax.swing.JPanel {
         }
         
         Aluno aluno = new Aluno();
-        aluno = cadastroAluno.obterAluno(alunos, Integer.parseInt(matDoAluno));
-        
+        //aluno = cadastroAluno.obterAluno(alunos, Integer.parseInt(matDoAluno));
+
+        // logicao remoção do aluno no banco de dados
+        boolean removido = AlunoDB.RemoverDb(Integer.parseInt(matDoAluno));
+
+        if(!removido){
+            javax.swing.JOptionPane.showMessageDialog(this, "Aluno não encontrado.", "Aviso",
+                    javax.swing.JOptionPane.WARNING_MESSAGE);
+
+            textMat.setText(" ");
+
+            return;
+        }
+
+        /*
         if(aluno == null){
             javax.swing.JOptionPane.showMessageDialog(this, "Aluno não encontrado.", "Aviso",
                     javax.swing.JOptionPane.WARNING_MESSAGE);
@@ -148,7 +162,7 @@ public class TelaDeRemocao extends javax.swing.JPanel {
             textMat.setText(" ");
             
             return;
-        }
+        } */
         
         // Aplicação da remoção do aluno;
         this.setAlunos(cadastroAluno.removerAluno(this.getAlunos(), aluno));

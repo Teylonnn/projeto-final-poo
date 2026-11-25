@@ -1,6 +1,7 @@
 package com.uespi.cadastro_aluno.view;
 
 import com.uespi.cadastro_aluno.model.Aluno;
+import com.uespi.cadastro_aluno.repository.AlunoDB;
 import com.uespi.cadastro_aluno.service.CadastroAluno;
 import java.time.LocalDate;
 import java.util.List;
@@ -213,7 +214,9 @@ public class CadastroAlunoPanel extends javax.swing.JPanel {
         Aluno aluno = new Aluno(nomeDoAluno, cpfDoAluno, Integer.parseInt(matDoAluno), LocalDate.parse(dataNascAluno), telDoAluno); 
         
         cadastroAluno.addEstudante(this.getAlunos() , aluno); // Adição do aluno criado ao vetor de alunos pela classe cadastro aluno;
-        
+        // Salvar no banco de dados
+        AlunoDB.SalvarDb(this.getAlunos());
+
         javax.swing.JOptionPane.showMessageDialog(this, "Aluno cadastrado com sucesso !!!", "Sucesso", 
                 javax.swing.JOptionPane.INFORMATION_MESSAGE); // Feedback de conclusão ao aluno;
         
